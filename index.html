@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inglés para Ascender — Phrasal Verbs Sin Misterio</title>
+    <meta name="description" content="Aprende los phrasal verbs del inglés de una vez por todas. Ebook práctico para hispanohablantes con método claro y sin rodeos.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --gold: #d4a439;
+            --gold-light: #f0c95c;
+            --dark: #0d1117;
+            --dark-card: #161b22;
+            --dark-surface: #1c2333;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent-blue: #58a6ff;
+            --gradient-gold: linear-gradient(135deg, #d4a439 0%, #f0c95c 50%, #d4a439 100%);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ── Ambient glow background ── */
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .bg-glow::before {
+            content: '';
+            position: absolute;
+            top: -30%; left: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(212,164,57,0.08) 0%, transparent 70%);
+            animation: floatGlow 20s ease-in-out infinite;
+        }
+        .bg-glow::after {
+            content: '';
+            position: absolute;
+            bottom: -20%; right: -10%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(88,166,255,0.05) 0%, transparent 70%);
+            animation: floatGlow 25s ease-in-out infinite reverse;
+        }
+        @keyframes floatGlow {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(80px, 40px); }
+        }
+
+        /* ── Nav ── */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(13,17,23,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212,164,57,0.12);
+            padding: 0.9rem 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-cta {
+            background: var(--gradient-gold);
+            color: var(--dark);
+            font-weight: 700; font-size: 0.85rem;
+            padding: 0.55rem 1.4rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(212,164,57,0.3);
+        }
+
+        /* ── Hero ── */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            padding: 7rem 2rem 4rem;
+        }
+        .hero-inner {
+            max-width: 1100px; width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 0.6rem;
+        }
+        .hero-text h1 .gold {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 480px;
+        }
+        .hero-badges {
+            display: flex; gap: 0.7rem; flex-wrap: wrap;
+            margin-bottom: 2.2rem;
+        }
+        .badge {
+            background: rgba(212,164,57,0.1);
+            border: 1px solid rgba(212,164,57,0.25);
+            color: var(--gold-light);
+            font-size: 0.78rem; font-weight: 600;
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+        }
+        .hero-cta-group {
+            display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
+        }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--gradient-gold);
+            color: var(--dark);
+            font-weight: 700; font-size: 1.05rem;
+            padding: 0.9rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none; cursor: pointer;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(212,164,57,0.35);
+        }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: transparent;
+            color: var(--text);
+            font-weight: 600; font-size: 0.95rem;
+            padding: 0.85rem 1.6rem;
+            border-radius: 12px;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            background: rgba(212,164,57,0.06);
+        }
+
+        /* ── Book cover ── */
+        .hero-cover {
+            display: flex; justify-content: center;
+        }
+        .book-wrapper {
+            position: relative;
+            perspective: 1200px;
+        }
+        .book-wrapper img {
+            width: 100%; max-width: 360px;
+            border-radius: 8px;
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.5),
+                0 0 80px rgba(212,164,57,0.12);
+            transition: transform 0.5s ease;
+            transform: rotateY(-4deg);
+        }
+        .book-wrapper:hover img {
+            transform: rotateY(0deg) scale(1.02);
+        }
+        .book-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: -30px; left: 10%; right: 10%;
+            height: 40px;
+            background: radial-gradient(ellipse, rgba(212,164,57,0.15), transparent 70%);
+            filter: blur(10px);
+        }
+
+        /* ── Section common ── */
+        section { padding: 5rem 2rem; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .section-label {
+            font-size: 0.78rem; font-weight: 700;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.6rem;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        /* ── Problem / Pain ── */
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .pain-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 1.8rem;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .pain-card:hover {
+            border-color: rgba(212,164,57,0.3);
+            transform: translateY(-3px);
+        }
+        .pain-icon {
+            font-size: 1.6rem; margin-bottom: 0.8rem;
+        }
+        .pain-card h3 {
+            font-size: 1.05rem; font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .pain-card p {
+            color: var(--text-muted); font-size: 0.92rem;
+        }
+
+        /* ── What you'll learn ── */
+        .learn-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.2rem;
+        }
+        .learn-item {
+            display: flex; gap: 1rem; align-items: flex-start;
+            padding: 1.2rem;
+            background: var(--dark-card);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+        .learn-check {
+            flex-shrink: 0;
+            width: 28px; height: 28px;
+            background: rgba(212,164,57,0.15);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold-light);
+            font-weight: 700; font-size: 0.9rem;
+        }
+        .learn-item p {
+            font-size: 0.95rem;
+        }
+
+        /* ── Authority ── */
+        .authority-section {
+            background: var(--dark-surface);
+            border-top: 1px solid rgba(212,164,57,0.1);
+            border-bottom: 1px solid rgba(212,164,57,0.1);
+        }
+        .authority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .authority-stat .number {
+            font-size: 2.4rem; font-weight: 900;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .authority-stat .label {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-top: 0.3rem;
+        }
+
+        /* ── Testimonial-style quote ── */
+        .quote-block {
+            max-width: 700px; margin: 3rem auto 0;
+            text-align: center;
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            position: relative;
+            padding: 0 2rem;
+        }
+        .quote-block::before {
+            content: '\201C';
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--gold);
+            position: absolute;
+            top: -1.5rem; left: 0;
+            opacity: 0.5;
+        }
+
+        /* ── Pricing CTA ── */
+        .pricing-section {
+            text-align: center;
+        }
+        .price-card {
+            display: inline-block;
+            background: var(--dark-card);
+            border: 2px solid rgba(212,164,57,0.3);
+            border-radius: 24px;
+            padding: 3rem 3.5rem;
+            max-width: 480px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--gradient-gold);
+        }
+        .price-card .format {
+            font-size: 0.82rem; font-weight: 600;
+            color: var(--gold); letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .price-card .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem; font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .price-amount {
+            font-size: 3.2rem; font-weight: 900;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .price-amount .currency { font-size: 1.6rem; vertical-align: top; }
+        .price-note {
+            color: var(--text-muted); font-size: 0.85rem;
+            margin: 0.5rem 0 2rem;
+        }
+        .price-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        .price-features li {
+            padding: 0.45rem 0;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            display: flex; align-items: center; gap: 0.6rem;
+        }
+        .price-features li::before {
+            content: '✓';
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+
+        /* ── Newsletter ── */
+        .newsletter-section {
+            background: var(--dark-surface);
+            border-top: 1px solid rgba(212,164,57,0.1);
+        }
+        .newsletter-box {
+            max-width: 560px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .newsletter-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem; font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+        .newsletter-box .desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            display: flex; gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .form-group input[type="email"] {
+            flex: 1;
+            padding: 0.85rem 1.2rem;
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 0.95rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-group input[type="email"]::placeholder {
+            color: var(--text-muted);
+        }
+        .form-group input[type="email"]:focus {
+            border-color: var(--gold);
+        }
+        .form-group button {
+            padding: 0.85rem 1.6rem;
+            background: var(--gradient-gold);
+            color: var(--dark);
+            font-weight: 700; font-size: 0.9rem;
+            border: none; border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+        }
+        .form-group button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(212,164,57,0.3);
+        }
+        .gdpr-consent {
+            display: flex; align-items: flex-start; gap: 0.6rem;
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+        .gdpr-consent input[type="checkbox"] {
+            margin-top: 0.25rem;
+            accent-color: var(--gold);
+            flex-shrink: 0;
+        }
+        .gdpr-consent label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        .gdpr-consent a {
+            color: var(--gold-light);
+            text-decoration: underline;
+        }
+        .gdpr-note {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            opacity: 0.7;
+            margin-top: 0.5rem;
+        }
+        .form-success {
+            display: none;
+            background: rgba(212,164,57,0.1);
+            border: 1px solid rgba(212,164,57,0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .form-success.show { display: block; }
+        .form-success p { font-weight: 600; color: var(--gold-light); }
+
+        /* ── Footer ── */
+        footer {
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+        footer a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        footer .footer-links {
+            margin-top: 0.6rem;
+        }
+        footer .footer-links a {
+            margin: 0 0.8rem;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+        footer .footer-links a:hover { color: var(--gold-light); }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2.5rem;
+            }
+            .hero-text { order: 1; }
+            .hero-cover { order: 0; }
+            .hero-subtitle { margin-left: auto; margin-right: auto; }
+            .hero-badges { justify-content: center; }
+            .hero-cta-group { justify-content: center; }
+            .book-wrapper img { max-width: 280px; }
+            .form-group { flex-direction: column; }
+            .price-card { padding: 2rem 1.5rem; }
+        }
+
+        /* ── Scroll animations ── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+    <div class="nav-logo">INGLÉS PARA ASCENDER</div>
+    <a href="#comprar" class="nav-cta">Consigue el ebook</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <div class="hero-badges">
+                <span class="badge">Ebook en español</span>
+                <span class="badge">Descarga inmediata</span>
+            </div>
+            <h1>Domina los <span class="gold">phrasal verbs</span> de una vez por todas</h1>
+            <p class="hero-subtitle">
+                El método claro y sin rodeos que te faltaba. Aprende a entender, recordar y usar los verbos que nadie te explicó bien.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#comprar" class="btn-primary">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                    Comprar ahora
+                </a>
+                <a href="#aprender" class="btn-secondary">Ver qué aprenderás</a>
+            </div>
+        </div>
+        <div class="hero-cover">
+            <div class="book-wrapper">
+                <img src="cover.jpg" alt="Portada de Phrasal Verbs Sin Misterio — ebook de Inglés para Ascender">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ PAIN POINTS ═══ -->
+<section class="fade-up">
+    <div class="container">
+        <div class="section-label">El problema</div>
+        <h2 class="section-title">¿Te suena esto?</h2>
+        <p class="section-desc">Los phrasal verbs son el mayor obstáculo para los hispanohablantes. Pero el problema no eres tú — es cómo te los enseñaron.</p>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="pain-icon">🔄</div>
+                <h3>Memorizar listas infinitas</h3>
+                <p>Has intentado estudiar listas de phrasal verbs de memoria, pero a los tres días ya no recuerdas nada.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-icon">😶</div>
+                <h3>Bloqueo al hablar</h3>
+                <p>Entiendes el inglés escrito, pero cuando hablas evitas los phrasal verbs porque no estás seguro de cómo usarlos.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-icon">🎬</div>
+                <h3>Perdido en series y podcasts</h3>
+                <p>Escuchas "get over", "get through", "get around"... y todos suenan igual. Los nativos los usan constantemente.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ WHAT YOU'LL LEARN ═══ -->
+<section id="aprender" class="fade-up">
+    <div class="container">
+        <div class="section-label">La solución</div>
+        <h2 class="section-title">Qué vas a aprender</h2>
+        <p class="section-desc">Un enfoque lógico, pensado para hispanohablantes, que convierte los phrasal verbs en algo predecible.</p>
+        <div class="learn-list">
+            <div class="learn-item">
+                <div class="learn-check">✓</div>
+                <p><strong>El sistema de partículas:</strong> entiende la lógica detrás de cada partícula (on, off, up, out...) para deducir significados nuevos.</p>
+            </div>
+            <div class="learn-item">
+                <div class="learn-check">✓</div>
+                <p><strong>GET a fondo:</strong> domina el verbo más versátil del inglés con todos sus phrasal verbs esenciales.</p>
+            </div>
+            <div class="learn-item">
+                <div class="learn-check">✓</div>
+                <p><strong>Contexto real:</strong> cada phrasal verb explicado con ejemplos de conversaciones, trabajo y vida cotidiana.</p>
+            </div>
+            <div class="learn-item">
+                <div class="learn-check">✓</div>
+                <p><strong>Explicaciones en español:</strong> sin traducciones forzadas — entenderás el sentido real, no una equivalencia artificial.</p>
+            </div>
+            <div class="learn-item">
+                <div class="learn-check">✓</div>
+                <p><strong>Trucos de memoria:</strong> técnicas para retener phrasal verbs a largo plazo sin repasar listas aburridas.</p>
+            </div>
+            <div class="learn-item">
+                <div class="learn-check">✓</div>
+                <p><strong>De intermedio a avanzado:</strong> el salto que necesitas para sonar natural y entender a los nativos sin esfuerzo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ AUTHORITY ═══ -->
+<section class="authority-section fade-up">
+    <div class="container">
+        <div class="section-label" style="text-align:center;">Quién está detrás</div>
+        <h2 class="section-title" style="text-align:center;">Creado por quien entiende los dos mundos</h2>
+        <p class="section-desc" style="text-align:center; margin-left:auto; margin-right:auto;">
+            Este ebook está escrito por un lingüista profesional y especialista en aprendizaje con más de 12 años de experiencia internacional en comunicación técnica, formación y creación de contenido educativo.
+        </p>
+        <div class="authority-grid">
+            <div class="authority-stat">
+                <div class="number">12+</div>
+                <div class="label">Años de experiencia internacional</div>
+            </div>
+            <div class="authority-stat">
+                <div class="number">100k+</div>
+                <div class="label">Suscriptores de contenido de idiomas</div>
+            </div>
+            <div class="authority-stat">
+                <div class="number">1000s</div>
+                <div class="label">Copias vendidas de materiales de idiomas</div>
+            </div>
+        </div>
+        <div class="quote-block">
+            Combinar una formación lingüística rigurosa con años de experiencia en comunicación técnica me permite crear materiales que realmente funcionan — claros, lógicos y pensados para cómo aprende un hispanohablante.
+        </div>
+    </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section id="comprar" class="pricing-section fade-up">
+    <div class="container">
+        <div class="section-label">Consigue tu copia</div>
+        <h2 class="section-title">Phrasal Verbs Sin Misterio</h2>
+        <p class="section-desc" style="margin-left:auto;margin-right:auto;text-align:center;">Descarga inmediata. Empieza a dominar los phrasal verbs hoy mismo.</p>
+        <div class="price-card">
+            <div class="format">Ebook — PDF + EPUB</div>
+            <div class="title">Phrasal Verbs Sin Misterio</div>
+            <div class="price-amount"><span class="currency">€</span>9<span style="font-size:1.6rem">.99</span></div>
+            <div class="price-note">Pago único · Sin suscripción</div>
+            <ul class="price-features">
+                <li>Acceso inmediato tras la compra</li>
+                <li>Formatos PDF y EPUB incluidos</li>
+                <li>Actualizaciones gratuitas de por vida</li>
+                <li>Explicaciones 100% en español</li>
+                <li>Compatible con Kindle, tablet, móvil y PC</li>
+            </ul>
+            <a href="#" class="btn-primary" style="width:100%;justify-content:center;" onclick="alert('Enlace de pago pendiente de configurar. Conecta tu pasarela de pago aquí.'); return false;">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                Comprar ahora — €9.99
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ NEWSLETTER ═══ -->
+<section id="newsletter" class="newsletter-section fade-up">
+    <div class="container">
+        <div class="newsletter-box">
+            <div class="section-label">Contenido gratuito</div>
+            <h2>Aprende inglés cada semana en tu bandeja</h2>
+            <p class="desc">
+                Recibe consejos prácticos, explicaciones claras y material exclusivo para mejorar tu inglés. Sin spam — contenido útil y alguna oferta puntual.
+            </p>
+
+            <form id="signup-form" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <input type="email" id="email-input" placeholder="tu@email.com" required aria-label="Correo electrónico">
+                    <button type="submit">Suscribirme</button>
+                </div>
+
+                <div class="gdpr-consent">
+                    <input type="checkbox" id="consent" required>
+                    <label for="consent">
+                        Acepto recibir contenido educativo sobre inglés y comunicaciones promocionales ocasionales de Inglés para Ascender. Puedo darme de baja en cualquier momento usando el enlace al final de cada email. Consulta nuestra <a href="#" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;">Política de Privacidad</a>.
+                    </label>
+                </div>
+                <div class="gdpr-note">
+                    Tus datos se tratan conforme al RGPD (Reglamento UE 2016/679). Base legal: consentimiento explícito (Art. 6.1.a). No compartimos tu email con terceros. Responsable: Inglés para Ascender.
+                </div>
+            </form>
+
+            <div class="form-success" id="form-success">
+                <p>¡Bienvenido/a! 🎉 Revisa tu bandeja de entrada.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <p>© 2026 Inglés para Ascender. Todos los derechos reservados.</p>
+    <div class="footer-links">
+        <a href="#" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;">Política de Privacidad</a>
+        <a href="mailto:contacto@inglesparaascender.com">Contacto</a>
+    </div>
+</footer>
+
+<!-- ═══ PRIVACY MODAL ═══ -->
+<div id="privacy-modal" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(0,0,0,0.7); backdrop-filter:blur(6px); align-items:center; justify-content:center; padding:2rem;">
+    <div style="background:var(--dark-card); border:1px solid rgba(255,255,255,0.1); border-radius:20px; max-width:600px; width:100%; max-height:80vh; overflow-y:auto; padding:2.5rem;">
+        <h2 style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:1rem;">Política de Privacidad</h2>
+        <div style="color:var(--text-muted); font-size:0.88rem; line-height:1.7;">
+            <p><strong>Responsable:</strong> Inglés para Ascender</p>
+            <p style="margin-top:0.8rem;"><strong>Datos recogidos:</strong> Dirección de correo electrónico, proporcionada voluntariamente a través del formulario de suscripción.</p>
+            <p style="margin-top:0.8rem;"><strong>Finalidad:</strong> Envío de contenido educativo sobre aprendizaje de inglés y comunicaciones promocionales ocasionales sobre productos de Inglés para Ascender.</p>
+            <p style="margin-top:0.8rem;"><strong>Base legal:</strong> Consentimiento explícito del interesado (Art. 6.1.a del RGPD — Reglamento UE 2016/679).</p>
+            <p style="margin-top:0.8rem;"><strong>Conservación:</strong> Tus datos se conservarán mientras mantengas tu suscripción activa. Puedes darte de baja en cualquier momento.</p>
+            <p style="margin-top:0.8rem;"><strong>Cesión de datos:</strong> No cedemos tus datos a terceros. Podemos utilizar un proveedor de servicios de email marketing (procesador de datos) que cumple con el RGPD.</p>
+            <p style="margin-top:0.8rem;"><strong>Tus derechos:</strong> Puedes ejercer tus derechos de acceso, rectificación, supresión, portabilidad, limitación y oposición al tratamiento de tus datos escribiendo a contacto@inglesparaascender.com.</p>
+            <p style="margin-top:0.8rem;"><strong>Autoridad de control:</strong> Si consideras que tus derechos no han sido atendidos, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (aepd.es).</p>
+        </div>
+        <button onclick="document.getElementById('privacy-modal').style.display='none'" style="margin-top:1.5rem; background:var(--gradient-gold); color:var(--dark); font-weight:700; border:none; padding:0.7rem 1.8rem; border-radius:10px; cursor:pointer; font-size:0.9rem;">Cerrar</button>
+    </div>
+</div>
+
+<script>
+    // ── Scroll reveal ──
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                observer.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ── Form handling (demo) ──
+    function handleSignup(e) {
+        e.preventDefault();
+        const consent = document.getElementById('consent');
+        if (!consent.checked) {
+            alert('Por favor, acepta la política de privacidad para continuar.');
+            return;
+        }
+        // In production, replace with your email service API call (e.g. Mailchimp, ConvertKit, Brevo)
+        document.getElementById('signup-form').style.display = 'none';
+        document.getElementById('form-success').classList.add('show');
+    }
+</script>
+
+</body>
+</html>
