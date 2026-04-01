@@ -511,6 +511,107 @@
             .price-card { padding: 2rem 1.5rem; }
         }
 
+        /* ── Method example ── */
+        .method-example {
+            background: var(--dark-surface);
+            border-top: 1px solid rgba(212,164,57,0.1);
+            border-bottom: 1px solid rgba(212,164,57,0.1);
+        }
+        .example-card {
+            max-width: 720px;
+            margin: 0 auto;
+            background: var(--dark-card);
+            border: 1px solid rgba(212,164,57,0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .example-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--gradient-gold);
+        }
+        .example-word {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        .example-word .particle {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .example-translation {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        .example-logic {
+            background: rgba(212,164,57,0.08);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 10px 10px 0;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .example-logic .logic-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            margin-bottom: 0.4rem;
+        }
+        .example-logic p {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .example-sentences {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .example-sentence {
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+        }
+        .example-sentence .lang {
+            flex-shrink: 0;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--gold-light);
+            background: rgba(212,164,57,0.12);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            margin-top: 0.15rem;
+        }
+        .example-sentence p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+        .example-sentence p strong {
+            color: var(--text);
+        }
+        .example-footer {
+            margin-top: 1.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+        .example-footer strong {
+            color: var(--gold-light);
+        }
+
         /* ── Scroll animations ── */
         .fade-up {
             opacity: 0;
@@ -541,16 +642,16 @@
                 <span class="badge">Ebook en español</span>
                 <span class="badge">Muy pronto disponible</span>
             </div>
-            <h1>Domina los <span class="gold">phrasal verbs</span> de una vez por todas</h1>
+            <h1>Que nunca más te quedes en blanco cuando escuches un <span class="gold">phrasal verb</span></h1>
             <p class="hero-subtitle">
-                El método claro y sin rodeos que te faltaba. Aprende a entender, recordar y usar los verbos que nadie te explicó bien.
+                En reuniones, en series, en entrevistas — los phrasal verbs aparecen en todas partes. Este ebook te enseña a entenderlos, recordarlos y usarlos con confianza. Sin listas. Sin memorizar. Con lógica.
             </p>
             <div class="hero-cta-group">
                 <a href="#newsletter" class="btn-primary">
                     <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
                     Avísame cuando salga
                 </a>
-                <a href="#aprender" class="btn-secondary">Ver qué aprenderás</a>
+                <a href="#metodo" class="btn-secondary">Mira cómo funciona</a>
             </div>
         </div>
         <div class="hero-cover">
@@ -582,6 +683,44 @@
                 <div class="pain-icon">🎬</div>
                 <h3>Perdido en series y podcasts</h3>
                 <p>Escuchas "get over", "get through", "get around"... y todos suenan igual. Los nativos los usan constantemente.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ METHOD EXAMPLE ═══ -->
+<section id="metodo" class="method-example fade-up">
+    <div class="container">
+        <div class="section-label" style="text-align:center;">Así funciona el método</div>
+        <h2 class="section-title" style="text-align:center;">Un ejemplo real del ebook</h2>
+        <p class="section-desc" style="text-align:center; margin-left:auto; margin-right:auto;">Nada de listas. Cada phrasal verb se explica con la lógica de la partícula, para que puedas deducir — no memorizar.</p>
+        <div class="example-card">
+            <div class="example-word">get <span class="particle">over</span></div>
+            <div class="example-translation">Superar algo (una enfermedad, una ruptura, un obstáculo)</div>
+            <div class="example-logic">
+                <div class="logic-label">La lógica de "over"</div>
+                <p><strong>OVER</strong> significa "por encima de". Cuando combinas GET (movimiento, cambio de estado) + OVER (pasar por encima), obtienes la imagen de <strong>dejar algo atrás pasando por encima</strong>. De ahí "superar". No es arbitrario — es visual.</p>
+            </div>
+            <div class="example-sentences">
+                <div class="example-sentence">
+                    <span class="lang">EN</span>
+                    <p>It took me months to <strong>get over</strong> the breakup.</p>
+                </div>
+                <div class="example-sentence">
+                    <span class="lang">ES</span>
+                    <p>Me costó meses <strong>superar</strong> la ruptura.</p>
+                </div>
+                <div class="example-sentence">
+                    <span class="lang">EN</span>
+                    <p>I can't <strong>get over</strong> how good that restaurant was.</p>
+                </div>
+                <div class="example-sentence">
+                    <span class="lang">ES</span>
+                    <p>No puedo <strong>dejar de pensar en</strong> lo bueno que era ese restaurante.</p>
+                </div>
+            </div>
+            <div class="example-footer">
+                Esto es <strong>una muestra de una entrada</strong>. El ebook cubre los phrasal verbs esenciales con este nivel de detalle.
             </div>
         </div>
     </div>
@@ -655,21 +794,22 @@
     <div class="container">
         <div class="section-label">Muy pronto disponible</div>
         <h2 class="section-title">Phrasal Verbs Sin Misterio</h2>
-        <p class="section-desc" style="margin-left:auto;margin-right:auto;text-align:center;">Estamos ultimando los detalles. Muy pronto podrás conseguir tu ebook.</p>
+        <p class="section-desc" style="margin-left:auto;margin-right:auto;text-align:center;">Estamos ultimando los detalles. Los suscritos a la lista serán los primeros en acceder — y a un precio que no se repetirá.</p>
         <div class="price-card">
             <div class="format">Ebook — Próximo lanzamiento</div>
             <div class="title">Phrasal Verbs Sin Misterio</div>
-            <div class="price-amount" style="font-size:2rem;"><span style="font-size:2rem;">Muy pronto</span></div>
-            <div class="price-note">Ebook en español · Pago único</div>
+            <div class="price-amount" style="font-size:2rem;"><span style="font-size:2rem;">Menos de 10 €</span></div>
+            <div class="price-note">Precio de lanzamiento exclusivo para suscritos · Pago único</div>
             <ul class="price-features">
                 <li>Disponible en formato Kindle</li>
                 <li>Lee en tablet, móvil y PC</li>
                 <li>Explicaciones 100% en español</li>
                 <li>Método claro y sin rodeos</li>
+                <li><strong style="color:var(--gold-light);">Precio de lanzamiento solo para la lista</strong></li>
             </ul>
             <a href="#newsletter" class="btn-primary" style="width:100%;justify-content:center;">
                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                Avísame cuando salga
+                Quiero el precio de lanzamiento
             </a>
         </div>
     </div>
@@ -680,9 +820,9 @@
     <div class="container">
         <div class="newsletter-box">
             <div class="section-label">Lanzamiento próximo</div>
-            <h2>Sé el primero en enterarte</h2>
+            <h2>Consigue el precio de lanzamiento</h2>
             <p class="desc">
-                Déjanos tu email y te avisaremos en cuanto el ebook esté disponible. Sin spam — solo el aviso del lanzamiento y algún contenido útil sobre inglés.
+                Los suscritos serán los primeros en acceder al ebook — y los únicos que lo conseguirán al precio especial de lanzamiento. Sin spam. Solo el aviso y algún contenido útil sobre inglés.
             </p>
 
             <form id="signup-form" method="POST" action="https://c3eaee10.sibforms.com/serve/MUIFAEHQ6tmqOzMqHGuYpgZeRU8aKDRoWUpGCF0NkxPZnXytjpSzgDTTONaxcf4vMggXOGaJif4BaZII1LU-QlMS34L907Whr3WzQMBSYWZc1b37KVGjm4b-fYfY3taANvnytUe3gXxFTIRl1ktYYUF7FMex15qlr_ABR8UICFyu41MJtSFvpJHdFFuiD3gS7_XRNcTbbHQbSQfBsg==" onsubmit="return handleSignup(event)">
