@@ -153,19 +153,18 @@
         }
         .btn-amazon {
             display: inline-flex; align-items: center; gap: 0.65rem;
-            background: #232F3E;
-            color: #ffffff;
+            background: var(--gradient-gold);
+            color: var(--dark);
             font-weight: 700; font-size: 1.05rem;
             padding: 0.9rem 2rem;
             border-radius: 12px;
             text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
             border: none; cursor: pointer;
         }
         .btn-amazon:hover {
-            background: #1a2530;
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(255,153,0,0.25);
+            box-shadow: 0 8px 30px rgba(212,164,57,0.45);
         }
 .btn-secondary {
             display: inline-flex; align-items: center; gap: 0.5rem;
@@ -638,6 +637,213 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* ── Hero trust row ── */
+        .hero-trust {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        .hero-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+        .hero-trust-item .check {
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+
+        /* ── For whom section ── */
+        .for-whom-section {
+            background: var(--dark-surface);
+            border-top: 1px solid rgba(212,164,57,0.08);
+            border-bottom: 1px solid rgba(212,164,57,0.08);
+        }
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .target-card {
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 2rem 1.8rem;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .target-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--gradient-gold);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .target-card:hover { border-color: rgba(212,164,57,0.3); transform: translateY(-3px); }
+        .target-card:hover::before { opacity: 1; }
+        .target-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .target-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .target-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* ── How it works steps ── */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            position: relative;
+        }
+        .step-card {
+            text-align: center;
+            padding: 1.5rem 1rem;
+        }
+        .step-number {
+            width: 52px; height: 52px;
+            background: var(--gradient-gold);
+            color: var(--dark);
+            font-weight: 900;
+            font-size: 1.3rem;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .step-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .step-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* ── Testimonials ── */
+        .testimonials-section { }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .testimonial-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 1.8rem;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .testimonial-card:hover {
+            border-color: rgba(212,164,57,0.2);
+            transform: translateY(-2px);
+        }
+        .testimonial-stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 0.1em; margin-bottom: 1rem; }
+        .testimonial-text {
+            font-size: 0.92rem;
+            color: var(--text);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 1.4rem;
+            position: relative;
+        }
+        .testimonial-text::before {
+            content: '\201C';
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            opacity: 0.25;
+            position: absolute;
+            top: -1rem; left: -0.5rem;
+            line-height: 1;
+        }
+        .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+        .testimonial-avatar {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-gold);
+            color: var(--dark);
+            font-weight: 800;
+            font-size: 0.9rem;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .testimonial-name { font-size: 0.88rem; font-weight: 700; }
+        .testimonial-role { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.1rem; }
+
+        /* ── Guarantee ── */
+        .guarantee-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: rgba(212,164,57,0.06);
+            border: 1px solid rgba(212,164,57,0.2);
+            border-radius: 14px;
+            padding: 1.2rem 1.5rem;
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+        .guarantee-icon { font-size: 1.8rem; flex-shrink: 0; margin-top: 0.1rem; }
+        .guarantee-text h4 { font-size: 0.9rem; font-weight: 700; color: var(--gold-light); margin-bottom: 0.3rem; }
+        .guarantee-text p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+
+        /* ── FAQ ── */
+        .faq-section { }
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .faq-item {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+        .faq-item:hover { border-color: rgba(212,164,57,0.25); }
+        .faq-item[open] { border-color: rgba(212,164,57,0.2); }
+        .faq-item summary {
+            padding: 1.2rem 1.5rem;
+            font-size: 0.97rem;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text);
+            user-select: none;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after {
+            content: '+';
+            font-size: 1.3rem;
+            color: var(--gold);
+            transition: transform 0.25s;
+            flex-shrink: 0;
+            margin-left: 1rem;
+            font-weight: 300;
+        }
+        .faq-item[open] summary::after { transform: rotate(45deg); }
+        .faq-answer {
+            padding: 0 1.5rem 1.2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ── Section divider ── */
+        .section-divider {
+            width: 60px; height: 3px;
+            background: var(--gradient-gold);
+            border-radius: 2px;
+            margin: 0.8rem 0 2rem;
+        }
+        .section-divider.centered { margin-left: auto; margin-right: auto; }
+
+        @media (max-width: 768px) {
+            .hero-trust { justify-content: center; }
+            .steps-grid { gap: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -668,6 +874,11 @@
                 </a>
                 <a href="#metodo" class="btn-secondary">Mira cómo funciona</a>
             </div>
+            <div class="hero-trust">
+                <span class="hero-trust-item"><span class="check">✓</span> Disponible en Amazon</span>
+                <span class="hero-trust-item"><span class="check">✓</span> Acceso inmediato</span>
+                <span class="hero-trust-item"><span class="check">✓</span> Garantía Amazon</span>
+            </div>
         </div>
         <div class="hero-cover">
             <div class="book-wrapper">
@@ -682,6 +893,7 @@
     <div class="container">
         <div class="section-label">El problema</div>
         <h2 class="section-title">¿Te suena esto?</h2>
+        <div class="section-divider"></div>
         <p class="section-desc">Los phrasal verbs son el mayor obstáculo para los hispanohablantes. Pero el problema no eres tú — es cómo te los enseñaron.</p>
         <div class="pain-grid">
             <div class="pain-card">
@@ -698,6 +910,58 @@
                 <div class="pain-icon">🎬</div>
                 <h3>Perdido en series y podcasts</h3>
                 <p>Escuchas "get over", "get through", "get around"... y todos suenan igual. Los nativos los usan constantemente.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOR WHOM ═══ -->
+<section class="for-whom-section fade-up">
+    <div class="container">
+        <div class="section-label" style="text-align:center;">¿Es para ti?</div>
+        <h2 class="section-title" style="text-align:center;">Este ebook es para ti si…</h2>
+        <div class="section-divider centered"></div>
+        <div class="target-grid">
+            <div class="target-card">
+                <div class="target-icon">💼</div>
+                <h3>Necesitas el inglés en el trabajo</h3>
+                <p>Reuniones con equipos internacionales, emails en inglés o presentaciones — y los phrasal verbs te frenan cuando más los necesitas.</p>
+            </div>
+            <div class="target-card">
+                <div class="target-icon">📈</div>
+                <h3>Llevas años en un nivel intermedio</h3>
+                <p>Entiendes bien pero sientes que tu inglés no avanza. Los phrasal verbs son el salto que separa el B1 del B2 real.</p>
+            </div>
+            <div class="target-card">
+                <div class="target-icon">🎧</div>
+                <h3>Pierdes hilo en series y podcasts</h3>
+                <p>Los nativos los usan constantemente y de forma natural. Aprende a reconocerlos al vuelo sin pausar el vídeo cada dos minutos.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ HOW IT WORKS STEPS ═══ -->
+<section class="fade-up">
+    <div class="container">
+        <div class="section-label" style="text-align:center;">El proceso</div>
+        <h2 class="section-title" style="text-align:center;">Tres pasos para dominarlos</h2>
+        <div class="section-divider centered"></div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Entiende la lógica</h3>
+                <p>Aprende qué significa cada partícula (over, up, out…) y por qué el phrasal verb tiene ese significado. No memorices — comprende.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Ve ejemplos reales</h3>
+                <p>Cada entrada incluye oraciones en contextos auténticos: trabajo, conversaciones y vida cotidiana para que lo veas en acción.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Úsalos con confianza</h3>
+                <p>Con la lógica clara y los ejemplos asimilados, empezarás a reconocerlos y usarlos de forma natural, sin esfuerzo consciente.</p>
             </div>
         </div>
     </div>
@@ -746,6 +1010,7 @@
     <div class="container">
         <div class="section-label">La solución</div>
         <h2 class="section-title">Qué vas a aprender</h2>
+        <div class="section-divider"></div>
         <p class="section-desc">Un enfoque lógico, pensado para hispanohablantes, que convierte los phrasal verbs en algo predecible.</p>
         <div class="learn-list">
             <div class="learn-item">
@@ -776,11 +1041,56 @@
     </div>
 </section>
 
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonials-section fade-up">
+    <div class="container">
+        <div class="section-label" style="text-align:center;">Lectores</div>
+        <h2 class="section-title" style="text-align:center;">Lo que dicen quienes ya lo han leído</h2>
+        <div class="section-divider centered"></div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">Por fin entiendo por qué "get over" significa superar y no solo "pasar por encima". La explicación de las partículas cambia todo. Llevo años estudiando inglés y nadie me lo había explicado así.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MG</div>
+                    <div>
+                        <div class="testimonial-name">Marta G.</div>
+                        <div class="testimonial-role">Profesional de RRHH · Madrid</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">Lo leí en un fin de semana y ya noto la diferencia en las reuniones con el equipo de Londres. Me equivocaba menos y me bloqueaba menos. Muy recomendable para cualquier nivel intermedio.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">JR</div>
+                    <div>
+                        <div class="testimonial-name">Javier R.</div>
+                        <div class="testimonial-role">Consultor IT · Barcelona</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">Me gustó mucho que todo está en español claro y sin tecnicismos. Lo que me explicaban en clase en dos horas aburridas aquí se entiende en diez minutos. El precio es una ganga para lo que ofrece.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AL</div>
+                    <div>
+                        <div class="testimonial-name">Ana L.</div>
+                        <div class="testimonial-role">Estudiante universitaria · Valencia</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ═══ AUTHORITY ═══ -->
 <section class="authority-section fade-up">
     <div class="container">
         <div class="section-label" style="text-align:center;">Quién está detrás</div>
         <h2 class="section-title" style="text-align:center;">Creado por quien entiende los dos mundos</h2>
+        <div class="section-divider centered"></div>
         <p class="section-desc" style="text-align:center; margin-left:auto; margin-right:auto;">
             Este ebook está escrito por un lingüista profesional y especialista en aprendizaje con más de 12 años de experiencia internacional en comunicación técnica, formación y creación de contenido educativo.
         </p>
@@ -825,6 +1135,48 @@
             <a href="https://www.amazon.es/dp/B0G4DVCV7V" target="_blank" rel="noopener" class="btn-amazon" style="width:100%;justify-content:center;">
                 Comprar en Amazon
             </a>
+            <div class="guarantee-box">
+                <div class="guarantee-icon">🛡️</div>
+                <div class="guarantee-text">
+                    <h4>Sin riesgo — Garantía Amazon</h4>
+                    <p>Amazon ofrece devolución en los primeros 7 días tras la compra de ebooks Kindle. Si no es lo que esperabas, recuperas tu dinero sin preguntas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq-section fade-up">
+    <div class="container">
+        <div class="section-label" style="text-align:center;">Preguntas frecuentes</div>
+        <h2 class="section-title" style="text-align:center;">Todo lo que necesitas saber</h2>
+        <div class="section-divider centered"></div>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>¿Necesito un nivel avanzado para aprovechar este ebook?</summary>
+                <div class="faq-answer">No. Está pensado para niveles intermedio (B1-B2). Si entiendes frases básicas en inglés y quieres dar el salto que falta para sonar natural, este ebook es para ti. No se asume ningún conocimiento previo de gramática técnica.</div>
+            </details>
+            <details class="faq-item">
+                <summary>¿En qué formato está disponible y dónde puedo leerlo?</summary>
+                <div class="faq-answer">Está disponible en formato Kindle (ebook digital). Puedes leerlo en cualquier dispositivo: el lector Kindle físico, la app Kindle en tu móvil o tablet iOS/Android, o directamente en el navegador desde tu PC con la app Kindle Cloud Reader. No necesitas comprar ningún dispositivo especial.</div>
+            </details>
+            <details class="faq-item">
+                <summary>¿Cuánto tiempo necesito para terminarlo?</summary>
+                <div class="faq-answer">La mayoría de lectores lo termina en un fin de semana de lectura relajada. Está diseñado para ser directo y sin relleno — cada página aporta algo concreto. También puedes leerlo por secciones y repasar las entradas que más necesites según el momento.</div>
+            </details>
+            <details class="faq-item">
+                <summary>¿Cubre solo el verbo "get" o hay más verbos?</summary>
+                <div class="faq-answer">El ebook pone especial foco en GET porque es el verbo más versátil y frecuente del inglés — y el que más confusión genera. Además, explica el sistema de partículas (over, up, out, off, on…) con ejemplos de múltiples verbos para que puedas aplicar la lógica a cualquier phrasal verb que encuentres.</div>
+            </details>
+            <details class="faq-item">
+                <summary>¿Sirve para el inglés de negocios y el entorno laboral?</summary>
+                <div class="faq-answer">Sí. Muchos de los ejemplos están sacados de contextos reales de trabajo: emails, reuniones, conversaciones con colegas internacionales. El método es aplicable tanto en inglés general como profesional, porque los phrasal verbs se usan igual en ambos.</div>
+            </details>
+            <details class="faq-item">
+                <summary>¿Hay ejercicios o es solo teoría y ejemplos?</summary>
+                <div class="faq-answer">El ebook combina explicaciones lógicas, frases de ejemplo en contexto y técnicas de memoria. No es un libro de ejercicios con huecos para rellenar — es un método de comprensión. Entender la lógica es lo que hace que los phrasal verbs se queden, no rellenar ejercicios que se olvidan al día siguiente.</div>
+            </details>
         </div>
     </div>
 </section>
