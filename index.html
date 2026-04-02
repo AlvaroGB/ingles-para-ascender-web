@@ -151,6 +151,23 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 30px rgba(212,164,57,0.35);
         }
+        .btn-amazon {
+            display: inline-flex; align-items: center; gap: 0.65rem;
+            background: #232F3E;
+            color: #ffffff;
+            font-weight: 700; font-size: 1.05rem;
+            padding: 0.9rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            border: none; cursor: pointer;
+        }
+        .btn-amazon:hover {
+            background: #1a2530;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255,153,0,0.25);
+        }
+        .btn-amazon img { height: 20px; vertical-align: middle; }
         .btn-secondary {
             display: inline-flex; align-items: center; gap: 0.5rem;
             background: transparent;
@@ -631,7 +648,7 @@
 <!-- ═══ NAV ═══ -->
 <nav>
     <div class="nav-logo">INGLÉS PARA ASCENDER</div>
-    <a href="#newsletter" class="nav-cta">Avísame del lanzamiento</a>
+    <a href="https://www.amazon.es/dp/B0G4DVCV7V" target="_blank" rel="noopener" class="nav-cta">Comprar</a>
 </nav>
 
 <!-- ═══ HERO ═══ -->
@@ -639,17 +656,17 @@
     <div class="hero-inner">
         <div class="hero-text">
             <div class="hero-badges">
-                <span class="badge">Ebook en español</span>
-                <span class="badge">Muy pronto disponible</span>
+                <span class="badge">Kindle · Español</span>
+                <span class="badge" style="background:rgba(212,164,57,0.18);color:var(--gold-light);border-color:var(--gold);">¡Ya disponible!</span>
             </div>
             <h1>Que nunca más te quedes en blanco cuando escuches un <span class="gold">phrasal verb</span></h1>
             <p class="hero-subtitle">
                 En reuniones, en series, en entrevistas — los phrasal verbs aparecen en todas partes. Este ebook te enseña a entenderlos, recordarlos y usarlos con confianza. Sin listas. Sin memorizar. Con lógica.
             </p>
             <div class="hero-cta-group">
-                <a href="#newsletter" class="btn-primary">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                    Avísame cuando salga
+                <a href="https://www.amazon.es/dp/B0G4DVCV7V" target="_blank" rel="noopener" class="btn-amazon">
+                    <img src="amazon-logo.svg" alt="Amazon">
+                    Comprar ahora — desde 9,99 €
                 </a>
                 <a href="#metodo" class="btn-secondary">Mira cómo funciona</a>
             </div>
@@ -792,24 +809,24 @@
 <!-- ═══ PRICING ═══ -->
 <section id="comprar" class="pricing-section fade-up">
     <div class="container">
-        <div class="section-label">Muy pronto disponible</div>
+        <div class="section-label" style="color:var(--gold-light);">¡Ya disponible!</div>
         <h2 class="section-title">Phrasal Verbs Sin Misterio</h2>
-        <p class="section-desc" style="margin-left:auto;margin-right:auto;text-align:center;">Estamos ultimando los detalles. Los suscritos a la lista serán los primeros en acceder — y a un precio que no se repetirá.</p>
+        <p class="section-desc" style="margin-left:auto;margin-right:auto;text-align:center;">Ya puedes descargarlo y empezar hoy mismo. Disponible en Kindle — léelo en tablet, móvil o PC.</p>
         <div class="price-card">
-            <div class="format">Ebook — Próximo lanzamiento</div>
+            <div class="format" style="color:var(--gold-light);font-weight:700;">¡Ya disponible en Amazon! 🎉</div>
             <div class="title">Phrasal Verbs Sin Misterio</div>
-            <div class="price-amount" style="font-size:2rem;"><span style="font-size:2rem;">Menos de 10 €</span></div>
-            <div class="price-note">Precio de lanzamiento exclusivo para suscritos · Pago único</div>
+            <div class="price-amount" style="font-size:2rem;"><span style="font-size:2rem;">9,99 €</span></div>
+            <div class="price-note">Pago único · Acceso inmediato · Formato Kindle</div>
             <ul class="price-features">
-                <li>Disponible en formato Kindle</li>
+                <li>Descarga inmediata en formato Kindle</li>
                 <li>Lee en tablet, móvil y PC</li>
                 <li>Explicaciones 100% en español</li>
                 <li>Método claro y sin rodeos</li>
-                <li><strong style="color:var(--gold-light);">Precio de lanzamiento solo para la lista</strong></li>
+                <li><strong style="color:var(--gold-light);">Empieza a leer hoy mismo</strong></li>
             </ul>
-            <a href="#newsletter" class="btn-primary" style="width:100%;justify-content:center;">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                Quiero el precio de lanzamiento
+            <a href="https://www.amazon.es/dp/B0G4DVCV7V" target="_blank" rel="noopener" class="btn-amazon" style="width:100%;justify-content:center;">
+                <img src="amazon-logo.svg" alt="Amazon">
+                Comprar en Amazon
             </a>
         </div>
     </div>
@@ -819,22 +836,22 @@
 <section id="newsletter" class="newsletter-section fade-up">
     <div class="container">
         <div class="newsletter-box">
-            <div class="section-label">Lanzamiento próximo</div>
-            <h2>Consigue el precio de lanzamiento</h2>
+            <div class="section-label">Contenido educativo y novedades</div>
+            <h2>Consejos de inglés y recursos nuevos, directo a tu bandeja</h2>
             <p class="desc">
-                Los suscritos serán los primeros en acceder al ebook — y los únicos que lo conseguirán al precio especial de lanzamiento. Sin spam. Solo el aviso y algún contenido útil sobre inglés.
+                Únete a la lista y recibe consejos prácticos para mejorar tu inglés profesional, trucos para aprender más rápido y avisos sobre nuevos recursos educativos. Sin spam. Solo lo que te ayuda a avanzar.
             </p>
 
             <form id="signup-form" method="POST" action="https://c3eaee10.sibforms.com/serve/MUIFAEHQ6tmqOzMqHGuYpgZeRU8aKDRoWUpGCF0NkxPZnXytjpSzgDTTONaxcf4vMggXOGaJif4BaZII1LU-QlMS34L907Whr3WzQMBSYWZc1b37KVGjm4b-fYfY3taANvnytUe3gXxFTIRl1ktYYUF7FMex15qlr_ABR8UICFyu41MJtSFvpJHdFFuiD3gS7_XRNcTbbHQbSQfBsg==" onsubmit="return handleSignup(event)">
                 <div class="form-group">
                     <input type="email" id="EMAIL" name="EMAIL" placeholder="tu@email.com" required autocomplete="off" aria-label="Correo electrónico">
-                    <button type="submit">Quiero que me avises</button>
+                    <button type="submit">Suscribirme</button>
                 </div>
 
                 <div class="gdpr-consent">
                     <input type="checkbox" id="consent" required>
                     <label for="consent">
-                        Acepto recibir el aviso de lanzamiento del ebook y comunicaciones ocasionales de Inglés para Ascender. Puedo darme de baja en cualquier momento. Consulta nuestra <a href="#" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;">Política de Privacidad</a>.
+                        Acepto recibir consejos de inglés, recursos educativos y novedades de Inglés para Ascender. Puedo darme de baja en cualquier momento. Consulta nuestra <a href="#" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;">Política de Privacidad</a>.
                     </label>
                 </div>
                 <div class="gdpr-note">
@@ -847,7 +864,7 @@
             </form>
 
             <div class="form-success" id="form-success">
-                <p>¡Apuntado/a! 🎉 Te avisaremos en cuanto el ebook esté listo.</p>
+                <p>¡Apuntado/a! 🎉 Bienvenido/a a la lista. Pronto recibirás los primeros consejos.</p>
             </div>
         </div>
     </div>
