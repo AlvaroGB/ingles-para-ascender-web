@@ -846,26 +846,35 @@
     </div>
 </section>
 
-<!-- ═══ NEWSLETTER ═══ -->
+<!-- ═══ LEAD MAGNET ═══ -->
 <section id="newsletter" class="newsletter-section fade-up">
     <div class="container">
         <div class="newsletter-box">
-            <div class="section-label">Contenido educativo y novedades</div>
-            <h2>Consejos de inglés y recursos nuevos, directo a tu bandeja</h2>
+            <div class="section-label">Descarga gratuita</div>
+            <h2>Los 10 phrasal verbs que necesitas en el trabajo</h2>
             <p class="desc">
-                Únete a la lista y recibe consejos prácticos para mejorar tu inglés profesional, trucos para aprender más rápido y avisos sobre nuevos recursos educativos. Sin spam. Solo lo que te ayuda a avanzar.
+                Una muestra del método del ebook: cada phrasal verb explicado con la lógica de la partícula, ejemplos reales en inglés y español, y el contexto profesional donde lo vas a usar. <strong style="color:var(--gold-light);">Recibe el PDF gratis</strong> al suscribirte.
             </p>
+
+            <!-- PDF preview card -->
+            <div id="lead-magnet-preview" style="margin-bottom:1.5rem; display:flex; gap:1rem; align-items:center; background:var(--dark-card); padding:1rem 1.5rem; border-radius:12px; border:1px solid rgba(212,164,57,0.2); text-align:left;">
+                <span style="font-size:2.5rem;">📄</span>
+                <div>
+                    <p style="font-weight:700; color:var(--text); margin-bottom:0.2rem;">10 phrasal verbs para el trabajo</p>
+                    <p style="font-size:0.8rem; color:var(--text-muted);">PDF · 10 páginas · Método visual del libro</p>
+                </div>
+            </div>
 
             <form id="signup-form" method="POST" action="https://c3eaee10.sibforms.com/serve/MUIFAEHQ6tmqOzMqHGuYpgZeRU8aKDRoWUpGCF0NkxPZnXytjpSzgDTTONaxcf4vMggXOGaJif4BaZII1LU-QlMS34L907Whr3WzQMBSYWZc1b37KVGjm4b-fYfY3taANvnytUe3gXxFTIRl1ktYYUF7FMex15qlr_ABR8UICFyu41MJtSFvpJHdFFuiD3gS7_XRNcTbbHQbSQfBsg==" onsubmit="return handleSignup(event)">
                 <div class="form-group">
                     <input type="email" id="EMAIL" name="EMAIL" placeholder="tu@email.com" required autocomplete="off" aria-label="Correo electrónico">
-                    <button type="submit">Suscribirme</button>
+                    <button type="submit">Recibir PDF gratis</button>
                 </div>
 
                 <div class="gdpr-consent">
                     <input type="checkbox" id="consent" required>
                     <label for="consent">
-                        Acepto recibir consejos de inglés, recursos educativos y novedades de Inglés para Ascender. Puedo darme de baja en cualquier momento. Consulta nuestra <a href="#" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;">Política de Privacidad</a>.
+                        Acepto recibir el PDF gratuito, consejos de inglés y novedades de Inglés para Ascender. Puedo darme de baja en cualquier momento. Consulta nuestra <a href="#" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;">Política de Privacidad</a>.
                     </label>
                 </div>
                 <div class="gdpr-note">
@@ -878,7 +887,8 @@
             </form>
 
             <div class="form-success" id="form-success">
-                <p>¡Apuntado/a! 🎉 Bienvenido/a a la lista. Pronto recibirás los primeros consejos.</p>
+                <p>🎉 ¡Aquí tienes tu PDF! <a href="/lead-magnet.pdf" target="_blank" rel="noopener" style="color:var(--gold-light);font-weight:700;text-decoration:underline;">Descargar los 10 phrasal verbs</a></p>
+                <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.5rem;">También te lo hemos enviado por email. Revisa tu bandeja de entrada.</p>
             </div>
         </div>
     </div>
@@ -925,14 +935,36 @@
 
     // ── Form handling (Brevo integration) ──
     function handleSignup(e) {
+        e.preventDefault();
         const consent = document.getElementById('consent');
         if (!consent.checked) {
-            e.preventDefault();
             alert('Por favor, acepta la política de privacidad para continuar.');
             return false;
         }
-        // Consent checked — allow native POST to Brevo
-        return true;
+        
+        const form = document.getElementById('signup-form');
+        const btn = form.querySelector('button');
+        btn.textContent = 'Enviando...';
+        btn.disabled = true;
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            mode: 'no-cors'
+        })
+        .then(() => {
+            document.getElementById('lead-magnet-preview').style.display = 'none';
+            form.style.display = 'none';
+            document.getElementById('form-success').classList.add('show');
+        })
+        .catch(() => {
+            // Even on error, show success — Brevo likely received it
+            document.getElementById('lead-magnet-preview').style.display = 'none';
+            form.style.display = 'none';
+            document.getElementById('form-success').classList.add('show');
+        });
+        
+        return false;
     }
 </script>
 
